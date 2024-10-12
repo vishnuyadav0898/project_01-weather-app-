@@ -1,21 +1,20 @@
 import API_KEY from './apikey.js';
 async function getdata(apikey,city) {
-    const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`;
-
+    const url  =`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apikey}`;
 try {
       let response = await fetch(url);
      let data = await response.json();
      if (data) {
     
         setdata(
-        data.location.name,
-        data.current.temp_c,
-        data.current.humidity,
-        data.current.wind_kph,
+        data.name,
+        data.main.temp,
+        data.main.humidity,
+        data.wind.speed,
         );
     }
 } catch (error) {
-    alert("enter valid city namer");
+    alert("enter valid city name");
     console.error(error);
  }
 }
