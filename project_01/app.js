@@ -1,22 +1,20 @@
-const API_KEY ="9efc3e1b6e8542848ac52304241110";
-const city = "jaipur";
+import API_KEY from './apikey.js';
 async function getdata(apikey,city) {
-    const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`;
-
+    const url  =`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apikey}`;
 try {
       let response = await fetch(url);
      let data = await response.json();
      if (data) {
     
         setdata(
-        data.location.name,
-        data.current.temp_c,
-        data.current.humidity,
-        data.current.wind_kph,
+        data.name,
+        data.main.temp,
+        data.main.humidity,
+        data.wind.speed,
         );
     }
 } catch (error) {
-    alert("enter valid city namer");
+    alert("enter valid city name");
     console.error(error);
  }
 }
@@ -34,24 +32,24 @@ function getweatherimage(tempereture) {
     let weatherimagesrc;
     switch (true) {
         case (tempereture <=0 ):
-            weatherimagesrc ="ice.png";
+            weatherimagesrc ="./images/ice.png";
             
             break;
             case (tempereture <= 0 ):
-                weatherimagesrc ="moisture.png";
+                weatherimagesrc ="./images/moisture.png";
                 
                 break;
                 case (tempereture <=15 ):
-                    weatherimagesrc ="no rain.png";
+                    weatherimagesrc ="./images/no rain.png";
                     
                     break;
                     case (tempereture <=30 ):
-                        weatherimagesrc ="rain.png";
+                        weatherimagesrc ="./images/rain.png";
                         
                         break;
     
         default:
-            weatherimagesrc = "clear.gif"
+            weatherimagesrc = "./images/clear.gif"
             break;
     }
     return weatherimagesrc;
