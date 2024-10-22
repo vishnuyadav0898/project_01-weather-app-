@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+    box-sizing: border-box;
+}
+.main{
+    padding-top: 15px;
+     height:70% ;
+    width: 25%;
+   background: linear-gradient(90deg,rgb(0, 0, 0),rgb(255, 100, 110));
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+.searchbox{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.searchbox input{
+width: 60%;
+height: 2rem;
+outline: 0;
+border-radius: 20px;
+padding: 10px;
+background-color:rgba(196, 193, 193, 0.051);
+color: aliceblue;
+}
+
+.icon{
+    background-color:rgba(196, 193, 193, 0.899);
+    height: 30px;
+    width: 30px;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.icon i {
+    margin: 7px;
+    color: gray;
+}
+
+.image{
+padding-top: 15px;
+padding-bottom: 5px;
+}
+
+.image img{
+    margin: 15px;
+    height: 8rem;
+    border-radius: 50%;
+    
+}
+
+.temp {
+    font-size: 50px;
+    color: white;
+    font-weight: 500;
+
+}
+
+.city{
+    font-size: 30px;
+    color: white;
+    font-weight: 300;
+    margin-top: 15px;
+    
+
+}
+
+.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content:space-evenly;
+    position: relative;
+    bottom: -40px;
+}
+
+.humidity{
+    color: white;
+    font-size: 20px;
+}
+
+.humidity i {
+    font-size: 30px;
+    
+}
+
+.humidity span {
+margin-left: 10px;
+
+}
+
+.wind{
+    color: white;
+    font-size: 20px;
+}
+.wind i {
+    font-size: 30px;
+    
+}
+.wind span {
+    margin-left: 10px;
+}
+.windspeed{
+    margin-top: 5px;
+}
