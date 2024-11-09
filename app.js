@@ -1,4 +1,5 @@
- import {API_KEY} from './apikey.js';
+  import {API_KEY} from './apikey.js';
+ 
  
 async function getdata(apikey,city) {
     const url  =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
@@ -6,7 +7,7 @@ try {
       let response = await fetch(url);
      let data = await response.json();
      if (data) {
-    
+     
         setdata(
         data.name,
         data.main.temp,
